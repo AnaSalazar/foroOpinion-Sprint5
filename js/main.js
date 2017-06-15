@@ -9,18 +9,32 @@ var funcionInicial = function () {
 
 var cargarTemas = function () {
   $.getJSON(api.url, function (temas) {
-    temas.forEach(crearTema);
+    temas.forEach(obtenerTema);
   });
 }
 
-var crearTema = function (tema) {
+var obtenerTema = function (tema) {
   var titulo = tema.content;
   var autor = tema.author_name;
   var respuestasAlTema = tema.responses_count;
-  console.log(titulo);
-  console.log(autor);
-  console.log(respuestasAlTema);
+
   mostrarTema(titulo, autor, respuestasAlTema);
+}
+
+var mostrarTema = function (titulo, autor, respuestasAlTema) {
+  var $tr = $("<tr />");
+  var $tituloTd = $("<td />");
+  $tituloTd.text(titulo);
+  var $autorTd = $("<td />");
+  $autorTd.text(autor);
+  var $respuestasTd = $("<td />");
+  $respuestasTd.text(respuestasAlTema);
+
+  $tr.append($tituloTd);
+  $tr.append($autorTd);
+  $tr.append($respuestasTd);
+
+  listaTemas.append($tr);
 }
 
 $(document).ready(funcionInicial);
