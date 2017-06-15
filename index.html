@@ -4,17 +4,31 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ForoSteph</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
   <body>
-
-    <h1>Aqui van todos los temas</h1>
-    
+    <h1>Foro de Steph</h1>
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+      + Agregar Tema
+    </button>
+    <section class="container">
+      <table class="table table-striped table-responsive">
+        <thead>
+          <th>Tema</th>
+          <th>Autor</th>
+          <th>Respuestas</th>
+        </thead>
+        <tbody id="listaTemas">
+          <!-- Aqui debo colocar los temas -->
+        </tbody>
+      </table>
+    </section>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/main.js"></script>
-    
+
   </body>
 </html>
