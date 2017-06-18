@@ -8,10 +8,22 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
   <body>
-    <h1>Foro de Steph</h1>
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-      + Nuevo Tema
-    </button>
+    <section class="container">
+      <h1 class="text-center">Foro de Steph</h1>
+      <form id="busquedaTemas" class="col-sm-8">
+        <div class="col-lg-6">
+         <div class="input-group">
+           <input id="busqueda" type="text" class="form-control" placeholder="Título del tema que buscas...">
+           <span class="input-group-btn">
+             <button class="btn btn-warning" type="submit">Buscar!</button>
+           </span>
+         </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">
+        + Nuevo Tema
+      </button>
+    </section>
     <section class="container">
       <table class="table table-striped table-responsive">
         <thead>
@@ -26,7 +38,7 @@
     </section>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
-        <form id="agregarFormulario">
+        <form id="formularioTemaNuevo">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
