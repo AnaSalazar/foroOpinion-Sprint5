@@ -23,8 +23,11 @@ var mostrarTema = function (tema) {
   var respuestasAlTema = tema.responses_count;
 
   var $tr = $("<tr />");
+  var $enlace = $("<a />");
+  $enlace.text(titulo);
+  $enlace.attr("href", "verTopic.html?topic_id=" + tema.id);
   var $tituloTd = $("<td />");
-  $tituloTd.text(titulo);
+  $tituloTd.append($enlace);
   var $autorTd = $("<td />");
   $autorTd.text(autor);
   var $respuestasTd = $("<td />");

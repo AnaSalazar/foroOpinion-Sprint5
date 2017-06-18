@@ -1,17 +1,16 @@
-<!-- mostrar en este HTML los TOPICS de /topics -->
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ForoSteph</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
   <body>
     <section class="container">
       <h1 class="text-center">Foro de Steph</h1>
-      <form id="busquedaTemas" class="col-sm-8">
-        <div class="col-lg-6">
+      <form id="busquedaTemas" class="col-sm-6">
+        <div class="col-sm-6">
          <div class="input-group">
            <input id="busqueda" type="text" class="form-control" placeholder="Título del tema que buscas...">
            <span class="input-group-btn">
@@ -20,12 +19,12 @@
          </div>
         </div>
       </form>
-      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">
+      <button type="button" class="btn btn-warning btn-sm col-sm-offset-2" data-toggle="modal" data-target="#myModal">
         + Nuevo Tema
       </button>
     </section>
-    <section class="container">
-      <table class="table table-striped table-responsive">
+    <section class="container table-responsive">
+      <table class="table table-striped ">
         <thead>
           <th>Tema</th>
           <th>Autor</th>
