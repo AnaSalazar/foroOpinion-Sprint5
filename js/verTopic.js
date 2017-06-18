@@ -8,21 +8,22 @@ var api = {
 var funcionInicial = function () {
   cargarTema();
   cargarRespuestas();
+  $("#formularioRespuesta").submit(nuevaRespuesta);
 }
 
 var cargarTema = function () {
   $.getJSON(api.url, function (tema) {
-    mostrarTema(tema);
-  })
+      mostrarTema(tema);
+  });
 }
 
 var cargarRespuestas = function () {
   $.getJSON(api.urlResponses, function (responses) {
     responses.forEach(function (response) {
       mostrarResponse(response);
-    });
+    })
   });
-}
+};
 
 var mostrarTema = function (tema) {
   var areaTema = $("#tema");
@@ -55,6 +56,21 @@ var mostrarResponse = function (response) {
   $contenedorIndividualRespuestas.append($areaTituloRespuesta);
   $contenedorIndividualRespuestas.append($areaAutorRespuesta);
   areaRespuesta.append($contenedorIndividualRespuestas);
+}
+
+var nuevaRespuesta = function (e) {
+  e.preventDefault();
+
+  var autorRespuesta = $("#autor").val();
+  var contenidoRespuesta = $("#contenido").val();
+
+  $.post(api.urlResponses, {
+    author_name: autorRespuesta,
+    content: contenidoRespuesta
+  }, function (respuesta) {
+      mostrarResponse(respuesta);
+      $("#myModal").modal("hide");
+  });
 }
 
 $(document).ready(funcionInicial);

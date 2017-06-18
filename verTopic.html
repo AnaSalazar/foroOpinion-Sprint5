@@ -15,10 +15,39 @@
     </section>
     <section class="container">
       <div class="center page-header" id="tema"></div>
-      <div class="container" id="respuestas"><h3 class="text-center">Respuestas al tema:</h3></div>
+      <div class="container" id="respuestas">
+        <div class="text-center h3">Respuestas al tema:
+          <button type="button" class="btn btn-warning btn-lg col-sm-offset-2" data-toggle="modal" data-target="#myModal">Añadir Respuesta</button>
+        </div>
+      </div>
     </section>
 
-
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <form id="formularioRespuesta">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Respuesta Nueva</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                  <label for="contenido">Contenido:</label>
+                  <input type="text" class="form-control" name="contenido" id="contenido" placeholder="Qué quieres decir">
+                </div>
+                <div class="form-group">
+                  <label for="autor">Autor:</label>
+                  <input type="text" class="form-control" name="autor" id="autor" placeholder="Tu nombre">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Añadir!</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
 
      <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
